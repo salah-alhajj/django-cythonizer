@@ -1,0 +1,59 @@
+Cython Compatibility Analysis Report
+====================================
+
+File: reporting/models.py
+-------------------------
+  Metaclass:
+    - Line 6: Metaclasses may not be fully supported in Cython
+
+File: time_tracking/models.py
+-----------------------------
+  Metaclass:
+    - Line 7: Metaclasses may not be fully supported in Cython
+
+File: projects/models.py
+------------------------
+  Metaclass:
+    - Line 6: Metaclasses may not be fully supported in Cython
+    - Line 25: Metaclasses may not be fully supported in Cython
+    - Line 42: Metaclasses may not be fully supported in Cython
+
+File: projects/serializers.py
+-----------------------------
+  Metaclass:
+    - Line 4: Metaclasses may not be fully supported in Cython
+    - Line 11: Metaclasses may not be fully supported in Cython
+
+File: finance/models.py
+-----------------------
+  Metaclass:
+    - Line 4: Metaclasses may not be fully supported in Cython
+
+File: finance/serializers.py
+----------------------------
+  Metaclass:
+    - Line 4: Metaclasses may not be fully supported in Cython
+
+File: notifications/models.py
+-----------------------------
+  Metaclass:
+    - Line 6: Metaclasses may not be fully supported in Cython
+
+File: employees/models.py
+-------------------------
+  Metaclass:
+    - Line 5: Metaclasses may not be fully supported in Cython
+    - Line 13: Metaclasses may not be fully supported in Cython
+    - Line 24: Metaclasses may not be fully supported in Cython
+    - Line 31: Metaclasses may not be fully supported in Cython
+    - Line 39: Metaclasses may not be fully supported in Cython
+
+File: employees/serializers.py
+------------------------------
+  Metaclass:
+    - Line 4: Metaclasses may not be fully supported in Cython
+    - Line 9: Metaclasses may not be fully supported in Cython
+    - Line 14: Metaclasses may not be fully supported in Cython
+    - Line 21: Metaclasses may not be fully supported in Cython
+    - Line 29: Metaclasses may not be fully supported in Cython
+
