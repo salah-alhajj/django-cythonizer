@@ -5,7 +5,7 @@ import logging
 from typing import List, Dict, Tuple, Set
 
 # إعداد التسجيل
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 # القائمة الافتراضية للمجلدات المستبعدة
@@ -15,6 +15,15 @@ DEFAULT_EXCLUDED_DIRS = {
     '__pycache__', '.pytest_cache',  # ملفات الكاش
     'migrations',  # مجلدات الترحيل في Django
     'node_modules',  # مجلدات npm إذا كان المشروع يستخدم JavaScript
+}
+
+# القائمة الافتراضية للملفات غير القابلة للتحويل
+DEFAULT_NON_CONVERTIBLE_FILES = {
+    'urls.py',
+    'settings.py',
+    'wsgi.py',
+    'asgi.py',
+    'manage.py',
 }
 
 class AdvancedCompatibilityChecker:
@@ -30,10 +39,8 @@ class AdvancedCompatibilityChecker:
             'eval_exec': self.check_eval_exec,
             'try_except_star': self.check_try_except_star,
         }
-        logger.debug("AdvancedCompatibilityChecker initialized")
 
     def analyze_file(self, file_path: str) -> Dict[str, List[str]]:
-        logger.info(f"Analyzing file: {file_path}")
         try:
             with open(file_path, 'r') as file:
                 content = file.read()
@@ -43,14 +50,9 @@ class AdvancedCompatibilityChecker:
 
             incompatibilities = {}
             for feature, checker in self.incompatible_features.items():
-                logger.debug(f"Checking feature: {feature}")
                 issues = checker(tree, astroid_tree)
                 if issues:
                     incompatibilities[feature] = issues
-                    logger.info(f"Found {len(issues)} issues with {feature} in {file_path}")
-
-            if not incompatibilities:
-                logger.info(f"No incompatibilities found in {file_path}")
 
             return incompatibilities
         except Exception as e:
@@ -123,45 +125,67 @@ class AdvancedCompatibilityChecker:
                 issues.append(f"Line {node.lineno}: Bare 'except:' clause may behave differently in Cython")
         return issues
 
-def analyze_project(project_path: str, excluded_dirs: Set[str] = DEFAULT_EXCLUDED_DIRS) -> Dict[str, Dict[str, List[str]]]:
+def analyze_project(project_path: str, excluded_dirs: Set[str] = DEFAULT_EXCLUDED_DIRS, non_convertible_files: Set[str] = DEFAULT_NON_CONVERTIBLE_FILES) -> Tuple[Dict[str, Dict[str, List[str]]], List[str], List[str]]:
     checker = AdvancedCompatibilityChecker()
     project_analysis = {}
+    all_files = []
+    non_convertible = []
 
     logger.info(f"Starting analysis of project at {project_path}")
-    logger.info(f"Excluded directories: {excluded_dirs}")
 
     for root, dirs, files in os.walk(project_path):
-        # استبعاد المجلدات غير المرغوب فيها
         dirs[:] = [d for d in dirs if d not in excluded_dirs]
 
-        logger.debug(f"Scanning directory: {root}")
         for file in files:
             if file.endswith('.py'):
                 file_path = os.path.join(root, file)
-                logger.debug(f"Found Python file: {file_path}")
                 relative_path = os.path.relpath(file_path, project_path)
-                incompatibilities = checker.analyze_file(file_path)
-                if incompatibilities:
-                    project_analysis[relative_path] = incompatibilities
+                all_files.append(relative_path)
+                
+                if file in non_convertible_files:
+                    non_convertible.append(relative_path)
+                else:
+                    incompatibilities = checker.analyze_file(file_path)
+                    if incompatibilities:
+                        project_analysis[relative_path] = incompatibilities
 
     logger.info(f"Completed analysis. Found issues in {len(project_analysis)} files.")
-    return project_analysis
+    logger.info(f"Found {len(non_convertible)} non-convertible files.")
+    return project_analysis, all_files, non_convertible
 
-def generate_report(project_analysis: Dict[str, Dict[str, List[str]]]) -> str:
+def generate_report(project_analysis: Dict[str, Dict[str, List[str]]], all_files: List[str], non_convertible: List[str]) -> str:
     report = "Cython Compatibility Analysis Report\n"
     report += "====================================\n\n"
 
-    if not project_analysis:
-        report += "No incompatibilities found in the project.\n"
-        return report
+    total_files = len(all_files)
+    files_with_issues = len(project_analysis)
+    non_convertible_count = len(non_convertible)
+    report += f"Total Python files scanned: {total_files}\n"
+    report += f"Files with compatibility issues: {files_with_issues}\n"
+    report += f"Non-convertible files: {non_convertible_count}\n"
+    report += f"Percentage of files with issues: {(files_with_issues / total_files) * 100:.2f}%\n\n"
 
-    for file_path, incompatibilities in project_analysis.items():
+    report += "Non-convertible Files:\n"
+    report += "----------------------\n"
+    for file in sorted(non_convertible):
+        report += f"  - {file}\n"
+    report += "\n"
+
+    for file_path in sorted(all_files):
         report += f"File: {file_path}\n"
         report += "-" * (len(file_path) + 6) + "\n"
-        for feature, issues in incompatibilities.items():
-            report += f"  {feature.capitalize()}:\n"
-            for issue in issues:
-                report += f"    - {issue}\n"
+        
+        if file_path in non_convertible:
+            report += "  This file is non-convertible and will be excluded from Cython conversion.\n"
+        elif file_path in project_analysis:
+            incompatibilities = project_analysis[file_path]
+            for feature, issues in incompatibilities.items():
+                report += f"  {feature.capitalize()}:\n"
+                for issue in issues:
+                    report += f"    - {issue}\n"
+        else:
+            report += "  No compatibility issues found.\n"
+        
         report += "\n"
 
     return report
@@ -176,15 +200,17 @@ if __name__ == "__main__":
     else:
         logger.info("Project path exists, starting analysis")
         
-        # يمكنك تخصيص المجلدات المستبعدة هنا إذا لزم الأمر
         custom_excluded_dirs = DEFAULT_EXCLUDED_DIRS.union({'custom_exclude_folder'})
+        custom_non_convertible_files = DEFAULT_NON_CONVERTIBLE_FILES.union({'custom_non_convertible.py'})
         
-        analysis = analyze_project(project_path, excluded_dirs=custom_excluded_dirs)
+        analysis, all_files, non_convertible = analyze_project(
+            project_path, 
+            excluded_dirs=custom_excluded_dirs,
+            non_convertible_files=custom_non_convertible_files
+        )
         logger.info("Analysis completed, generating report")
-        report = generate_report(analysis)
-        print(report)
+        report = generate_report(analysis, all_files, non_convertible)
         
-        # حفظ التقرير في ملف
         report_file = "cython_compatibility_report.txt"
         with open(report_file, "w") as f:
             f.write(report)

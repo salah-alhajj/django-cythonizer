@@ -1,43 +1,63 @@
 Cython Compatibility Analysis Report
 ====================================
 
-File: reporting/models.py
--------------------------
-  Metaclass:
-    - Line 6: Metaclasses may not be fully supported in Cython
+Total Python files scanned: 57
+Files with compatibility issues: 9
+Non-convertible files: 10
+Percentage of files with issues: 15.79%
 
-File: time_tracking/models.py
------------------------------
-  Metaclass:
-    - Line 7: Metaclasses may not be fully supported in Cython
+Non-convertible Files:
+----------------------
+  - Root/asgi.py
+  - Root/settings.py
+  - Root/urls.py
+  - Root/wsgi.py
+  - employees/urls.py
+  - finance/urls.py
+  - manage.py
+  - projects/urls.py
+  - reporting/urls.py
+  - time_tracking/urls.py
 
-File: projects/models.py
+File: Root/asgi.py
+------------------
+  This file is non-convertible and will be excluded from Cython conversion.
+
+File: Root/settings.py
+----------------------
+  This file is non-convertible and will be excluded from Cython conversion.
+
+File: Root/urls.py
+------------------
+  This file is non-convertible and will be excluded from Cython conversion.
+
+File: Root/wsgi.py
+------------------
+  This file is non-convertible and will be excluded from Cython conversion.
+
+File: check.py
+--------------
+  No compatibility issues found.
+
+File: checking.py
+-----------------
+  No compatibility issues found.
+
+File: checking_v2.py
+--------------------
+  No compatibility issues found.
+
+File: employees/__init__.py
+---------------------------
+  No compatibility issues found.
+
+File: employees/admin.py
 ------------------------
-  Metaclass:
-    - Line 6: Metaclasses may not be fully supported in Cython
-    - Line 25: Metaclasses may not be fully supported in Cython
-    - Line 42: Metaclasses may not be fully supported in Cython
+  No compatibility issues found.
 
-File: projects/serializers.py
------------------------------
-  Metaclass:
-    - Line 4: Metaclasses may not be fully supported in Cython
-    - Line 11: Metaclasses may not be fully supported in Cython
-
-File: finance/models.py
+File: employees/apps.py
 -----------------------
-  Metaclass:
-    - Line 4: Metaclasses may not be fully supported in Cython
-
-File: finance/serializers.py
-----------------------------
-  Metaclass:
-    - Line 4: Metaclasses may not be fully supported in Cython
-
-File: notifications/models.py
------------------------------
-  Metaclass:
-    - Line 6: Metaclasses may not be fully supported in Cython
+  No compatibility issues found.
 
 File: employees/models.py
 -------------------------
@@ -56,4 +76,194 @@ File: employees/serializers.py
     - Line 14: Metaclasses may not be fully supported in Cython
     - Line 21: Metaclasses may not be fully supported in Cython
     - Line 29: Metaclasses may not be fully supported in Cython
+
+File: employees/tests.py
+------------------------
+  No compatibility issues found.
+
+File: employees/urls.py
+-----------------------
+  This file is non-convertible and will be excluded from Cython conversion.
+
+File: employees/views.py
+------------------------
+  No compatibility issues found.
+
+File: finance/__init__.py
+-------------------------
+  No compatibility issues found.
+
+File: finance/admin.py
+----------------------
+  No compatibility issues found.
+
+File: finance/apps.py
+---------------------
+  No compatibility issues found.
+
+File: finance/models.py
+-----------------------
+  Metaclass:
+    - Line 4: Metaclasses may not be fully supported in Cython
+
+File: finance/serializers.py
+----------------------------
+  Metaclass:
+    - Line 4: Metaclasses may not be fully supported in Cython
+
+File: finance/tests.py
+----------------------
+  No compatibility issues found.
+
+File: finance/urls.py
+---------------------
+  This file is non-convertible and will be excluded from Cython conversion.
+
+File: finance/views.py
+----------------------
+  No compatibility issues found.
+
+File: generate_realistic_mockup_data.py
+---------------------------------------
+  No compatibility issues found.
+
+File: manage.py
+---------------
+  This file is non-convertible and will be excluded from Cython conversion.
+
+File: notifications/__init__.py
+-------------------------------
+  No compatibility issues found.
+
+File: notifications/admin.py
+----------------------------
+  No compatibility issues found.
+
+File: notifications/apps.py
+---------------------------
+  No compatibility issues found.
+
+File: notifications/models.py
+-----------------------------
+  Metaclass:
+    - Line 6: Metaclasses may not be fully supported in Cython
+
+File: notifications/tests.py
+----------------------------
+  No compatibility issues found.
+
+File: notifications/views.py
+----------------------------
+  No compatibility issues found.
+
+File: projects/__init__.py
+--------------------------
+  No compatibility issues found.
+
+File: projects/admin.py
+-----------------------
+  No compatibility issues found.
+
+File: projects/apps.py
+----------------------
+  No compatibility issues found.
+
+File: projects/models.py
+------------------------
+  Metaclass:
+    - Line 6: Metaclasses may not be fully supported in Cython
+    - Line 25: Metaclasses may not be fully supported in Cython
+    - Line 42: Metaclasses may not be fully supported in Cython
+
+File: projects/serializers.py
+-----------------------------
+  Metaclass:
+    - Line 4: Metaclasses may not be fully supported in Cython
+    - Line 11: Metaclasses may not be fully supported in Cython
+
+File: projects/tests.py
+-----------------------
+  No compatibility issues found.
+
+File: projects/urls.py
+----------------------
+  This file is non-convertible and will be excluded from Cython conversion.
+
+File: projects/views.py
+-----------------------
+  No compatibility issues found.
+
+File: rename.py
+---------------
+  No compatibility issues found.
+
+File: reporting/__init__.py
+---------------------------
+  No compatibility issues found.
+
+File: reporting/admin.py
+------------------------
+  No compatibility issues found.
+
+File: reporting/apps.py
+-----------------------
+  No compatibility issues found.
+
+File: reporting/models.py
+-------------------------
+  Metaclass:
+    - Line 6: Metaclasses may not be fully supported in Cython
+
+File: reporting/serializers.py
+------------------------------
+  No compatibility issues found.
+
+File: reporting/tests.py
+------------------------
+  No compatibility issues found.
+
+File: reporting/urls.py
+-----------------------
+  This file is non-convertible and will be excluded from Cython conversion.
+
+File: reporting/views.py
+------------------------
+  No compatibility issues found.
+
+File: setup.py
+--------------
+  No compatibility issues found.
+
+File: time_tracking/__init__.py
+-------------------------------
+  No compatibility issues found.
+
+File: time_tracking/admin.py
+----------------------------
+  No compatibility issues found.
+
+File: time_tracking/apps.py
+---------------------------
+  No compatibility issues found.
+
+File: time_tracking/models.py
+-----------------------------
+  Metaclass:
+    - Line 7: Metaclasses may not be fully supported in Cython
+
+File: time_tracking/serializers.py
+----------------------------------
+  No compatibility issues found.
+
+File: time_tracking/tests.py
+----------------------------
+  No compatibility issues found.
+
+File: time_tracking/urls.py
+---------------------------
+  This file is non-convertible and will be excluded from Cython conversion.
+
+File: time_tracking/views.py
+----------------------------
+  No compatibility issues found.
 
