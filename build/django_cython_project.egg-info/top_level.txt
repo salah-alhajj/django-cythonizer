@@ -1,6 +1,0 @@
-employees
-finance
-notifications
-projects
-reporting
-time_tracking
