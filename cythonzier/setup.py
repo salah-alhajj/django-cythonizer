@@ -8,8 +8,8 @@ from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 
 # قائمة الملفات والمجلدات التي يجب استثناؤها من التحويل إلى Cython
-EXCLUDE_FILES = ['setup.py',  '__init__.py','manage.py']
-EXCLUDE_DIRS = ['migrations']
+EXCLUDE_FILES = ['setup.py',  '__init__.py','manage.py','urls.py']
+EXCLUDE_DIRS = ['migrations','.venv']
 
 def should_exclude(file_path):
     file_name = os.path.basename(file_path)
@@ -97,7 +97,7 @@ setup_kwargs = {
     'python_requires': '>=3.6',
     'include_package_data': True,
     'cmdclass': {
-        'build': CopyAndBuildCommand,
+        'cbuild': CopyAndBuildCommand,
     },
 }
 
