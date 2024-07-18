@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'time_tracking',
     'reporting',
     'notifications',
+    'cythonizer'
     
 ]
 

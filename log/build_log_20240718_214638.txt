@@ -1,0 +1,176 @@
+2024-07-18 21:46:38,702 - INFO - Starting copy and build process for the entire project
+2024-07-18 21:46:39,708 - INFO - Removing existing build directory: ./build
+2024-07-18 21:46:40,923 - INFO - Copying project to ./build
+2024-07-18 21:46:43,111 - INFO - Starting conversion and compilation of files
+2024-07-18 21:46:43,116 - INFO - Fixed Cython issues in ./build/cythonizer/old/check.pyx
+2024-07-18 21:46:43,554 - INFO - Converted and compiled ./build/cythonizer/old/check.py to ./build/cythonizer/old/check.pyx
+2024-07-18 21:46:43,555 - INFO - Fixed Cython issues in ./build/cythonizer/old/rename.pyx
+2024-07-18 21:46:43,584 - INFO - Converted and compiled ./build/cythonizer/old/rename.py to ./build/cythonizer/old/rename.pyx
+2024-07-18 21:46:43,585 - INFO - Fixed Cython issues in ./build/cythonizer/old/checking.pyx
+2024-07-18 21:46:43,647 - INFO - Converted and compiled ./build/cythonizer/old/checking.py to ./build/cythonizer/old/checking.pyx
+2024-07-18 21:46:43,647 - INFO - Fixed Cython issues in ./build/cythonizer/old/generate_realistic_mockup_data.pyx
+2024-07-18 21:46:43,739 - INFO - Converted and compiled ./build/cythonizer/old/generate_realistic_mockup_data.py to ./build/cythonizer/old/generate_realistic_mockup_data.pyx
+2024-07-18 21:46:43,740 - INFO - Fixed Cython issues in ./build/cythonizer/old/checking_v2.pyx
+2024-07-18 21:46:43,842 - INFO - Converted and compiled ./build/cythonizer/old/checking_v2.py to ./build/cythonizer/old/checking_v2.pyx
+2024-07-18 21:46:43,843 - INFO - Fixed Cython issues in ./build/cythonizer/build_tools/cython_compiler.pyx
+2024-07-18 21:46:43,860 - INFO - Converted and compiled ./build/cythonizer/build_tools/cython_compiler.py to ./build/cythonizer/build_tools/cython_compiler.pyx
+2024-07-18 21:46:43,860 - INFO - Fixed Cython issues in ./build/cythonizer/build_tools/config.pyx
+2024-07-18 21:46:43,873 - INFO - Converted and compiled ./build/cythonizer/build_tools/config.py to ./build/cythonizer/build_tools/config.pyx
+2024-07-18 21:46:43,874 - INFO - Fixed Cython issues in ./build/cythonizer/build_tools/build_command.pyx
+2024-07-18 21:46:43,920 - INFO - Converted and compiled ./build/cythonizer/build_tools/build_command.py to ./build/cythonizer/build_tools/build_command.pyx
+2024-07-18 21:46:43,920 - INFO - Fixed Cython issues in ./build/cythonizer/build_tools/spinner.pyx
+2024-07-18 21:46:43,940 - INFO - Converted and compiled ./build/cythonizer/build_tools/spinner.py to ./build/cythonizer/build_tools/spinner.pyx
+2024-07-18 21:46:43,940 - INFO - Fixed Cython issues in ./build/cythonizer/build_tools/file_operations.pyx
+2024-07-18 21:46:43,943 - ERROR - Error compiling Cython file ./build/cythonizer/build_tools/file_operations.pyx:
+
+Error compiling Cython file:
+------------------------------------------------------------
+...
+    with open(file_path, 'r') as file:
+        content = file.read()
+    
+    # إصلاح مشكلة الفاصلة في الاستيراد
+    content = re.sub(r'from (.*) import (.*),(.*)$', r'from \1 import \2\nfrom \1 import \3', content
+from (.*) import (.*),(.*)$', r'from \1 import \2\nfrom \1 import  flags=re.MULTILINE)
+^
+------------------------------------------------------------
+
+build/cythonizer/build_tools/file_operations.pyx:27:0: Expected ')', found 'from'
+
+2024-07-18 21:46:43,943 - INFO - Keeping ./build/cythonizer/build_tools/file_operations.py as a Python file
+2024-07-18 21:46:43,943 - INFO - Fixed Cython issues in ./build/cythonizer/build_tools/logging_setup.pyx
+2024-07-18 21:46:43,955 - INFO - Converted and compiled ./build/cythonizer/build_tools/logging_setup.py to ./build/cythonizer/build_tools/logging_setup.pyx
+2024-07-18 21:46:43,955 - INFO - Fixed Cython issues in ./build/reporting/models.pyx
+2024-07-18 21:46:43,966 - INFO - Converted and compiled ./build/reporting/models.py to ./build/reporting/models.pyx
+2024-07-18 21:46:43,966 - INFO - Fixed Cython issues in ./build/reporting/serializers.pyx
+2024-07-18 21:46:43,969 - INFO - Converted and compiled ./build/reporting/serializers.py to ./build/reporting/serializers.pyx
+2024-07-18 21:46:43,969 - INFO - Fixed Cython issues in ./build/reporting/apps.pyx
+2024-07-18 21:46:43,975 - INFO - Converted and compiled ./build/reporting/apps.py to ./build/reporting/apps.pyx
+2024-07-18 21:46:43,975 - INFO - Fixed Cython issues in ./build/reporting/admin.pyx
+2024-07-18 21:46:43,980 - INFO - Converted and compiled ./build/reporting/admin.py to ./build/reporting/admin.pyx
+2024-07-18 21:46:43,980 - INFO - Fixed Cython issues in ./build/reporting/tests.pyx
+2024-07-18 21:46:43,984 - INFO - Converted and compiled ./build/reporting/tests.py to ./build/reporting/tests.pyx
+2024-07-18 21:46:43,984 - INFO - Fixed Cython issues in ./build/reporting/views.pyx
+2024-07-18 21:46:43,989 - INFO - Converted and compiled ./build/reporting/views.py to ./build/reporting/views.pyx
+2024-07-18 21:46:43,989 - INFO - Fixed Cython issues in ./build/time_tracking/models.pyx
+2024-07-18 21:46:43,999 - INFO - Converted and compiled ./build/time_tracking/models.py to ./build/time_tracking/models.pyx
+2024-07-18 21:46:43,999 - INFO - Fixed Cython issues in ./build/time_tracking/serializers.pyx
+2024-07-18 21:46:44,002 - INFO - Converted and compiled ./build/time_tracking/serializers.py to ./build/time_tracking/serializers.pyx
+2024-07-18 21:46:44,003 - INFO - Fixed Cython issues in ./build/time_tracking/apps.pyx
+2024-07-18 21:46:44,007 - INFO - Converted and compiled ./build/time_tracking/apps.py to ./build/time_tracking/apps.pyx
+2024-07-18 21:46:44,008 - INFO - Fixed Cython issues in ./build/time_tracking/admin.pyx
+2024-07-18 21:46:44,014 - INFO - Converted and compiled ./build/time_tracking/admin.py to ./build/time_tracking/admin.pyx
+2024-07-18 21:46:44,014 - INFO - Fixed Cython issues in ./build/time_tracking/tests.pyx
+2024-07-18 21:46:44,018 - INFO - Converted and compiled ./build/time_tracking/tests.py to ./build/time_tracking/tests.pyx
+2024-07-18 21:46:44,018 - INFO - Fixed Cython issues in ./build/time_tracking/views.pyx
+2024-07-18 21:46:44,021 - INFO - Converted and compiled ./build/time_tracking/views.py to ./build/time_tracking/views.pyx
+2024-07-18 21:46:44,022 - INFO - Fixed Cython issues in ./build/projects/models.pyx
+2024-07-18 21:46:44,043 - INFO - Converted and compiled ./build/projects/models.py to ./build/projects/models.pyx
+2024-07-18 21:46:44,044 - INFO - Fixed Cython issues in ./build/projects/serializers.pyx
+2024-07-18 21:46:44,053 - INFO - Converted and compiled ./build/projects/serializers.py to ./build/projects/serializers.pyx
+2024-07-18 21:46:44,054 - INFO - Fixed Cython issues in ./build/projects/apps.pyx
+2024-07-18 21:46:44,059 - INFO - Converted and compiled ./build/projects/apps.py to ./build/projects/apps.pyx
+2024-07-18 21:46:44,059 - INFO - Fixed Cython issues in ./build/projects/admin.pyx
+2024-07-18 21:46:44,065 - INFO - Converted and compiled ./build/projects/admin.py to ./build/projects/admin.pyx
+2024-07-18 21:46:44,066 - INFO - Fixed Cython issues in ./build/projects/tests.pyx
+2024-07-18 21:46:44,069 - INFO - Converted and compiled ./build/projects/tests.py to ./build/projects/tests.pyx
+2024-07-18 21:46:44,069 - INFO - Fixed Cython issues in ./build/projects/views.pyx
+2024-07-18 21:46:44,090 - INFO - Converted and compiled ./build/projects/views.py to ./build/projects/views.pyx
+2024-07-18 21:46:44,091 - INFO - Fixed Cython issues in ./build/Root/asgi.pyx
+2024-07-18 21:46:44,122 - INFO - Converted and compiled ./build/Root/asgi.py to ./build/Root/asgi.pyx
+2024-07-18 21:46:44,122 - INFO - Fixed Cython issues in ./build/Root/settings.pyx
+2024-07-18 21:46:44,133 - INFO - Converted and compiled ./build/Root/settings.py to ./build/Root/settings.pyx
+2024-07-18 21:46:44,133 - INFO - Fixed Cython issues in ./build/Root/wsgi.pyx
+2024-07-18 21:46:44,142 - INFO - Converted and compiled ./build/Root/wsgi.py to ./build/Root/wsgi.pyx
+2024-07-18 21:46:44,149 - INFO - Fixed Cython issues in ./build/finance/models.pyx
+2024-07-18 21:46:44,160 - INFO - Converted and compiled ./build/finance/models.py to ./build/finance/models.pyx
+2024-07-18 21:46:44,161 - INFO - Fixed Cython issues in ./build/finance/serializers.pyx
+2024-07-18 21:46:44,169 - INFO - Converted and compiled ./build/finance/serializers.py to ./build/finance/serializers.pyx
+2024-07-18 21:46:44,169 - INFO - Fixed Cython issues in ./build/finance/apps.pyx
+2024-07-18 21:46:44,175 - INFO - Converted and compiled ./build/finance/apps.py to ./build/finance/apps.pyx
+2024-07-18 21:46:44,175 - INFO - Fixed Cython issues in ./build/finance/admin.pyx
+2024-07-18 21:46:44,181 - INFO - Converted and compiled ./build/finance/admin.py to ./build/finance/admin.pyx
+2024-07-18 21:46:44,181 - INFO - Fixed Cython issues in ./build/finance/tests.pyx
+2024-07-18 21:46:44,185 - INFO - Converted and compiled ./build/finance/tests.py to ./build/finance/tests.pyx
+2024-07-18 21:46:44,185 - INFO - Fixed Cython issues in ./build/finance/views.pyx
+2024-07-18 21:46:44,199 - INFO - Converted and compiled ./build/finance/views.py to ./build/finance/views.pyx
+2024-07-18 21:46:44,206 - INFO - Fixed Cython issues in ./build/notifications/models.pyx
+2024-07-18 21:46:44,216 - INFO - Converted and compiled ./build/notifications/models.py to ./build/notifications/models.pyx
+2024-07-18 21:46:44,216 - INFO - Fixed Cython issues in ./build/notifications/apps.pyx
+2024-07-18 21:46:44,222 - INFO - Converted and compiled ./build/notifications/apps.py to ./build/notifications/apps.pyx
+2024-07-18 21:46:44,223 - INFO - Fixed Cython issues in ./build/notifications/admin.pyx
+2024-07-18 21:46:44,228 - INFO - Converted and compiled ./build/notifications/admin.py to ./build/notifications/admin.pyx
+2024-07-18 21:46:44,228 - INFO - Fixed Cython issues in ./build/notifications/tests.pyx
+2024-07-18 21:46:44,232 - INFO - Converted and compiled ./build/notifications/tests.py to ./build/notifications/tests.pyx
+2024-07-18 21:46:44,232 - INFO - Fixed Cython issues in ./build/notifications/views.pyx
+2024-07-18 21:46:44,235 - INFO - Converted and compiled ./build/notifications/views.py to ./build/notifications/views.pyx
+2024-07-18 21:46:44,236 - INFO - Fixed Cython issues in ./build/employees/models.pyx
+2024-07-18 21:46:44,258 - INFO - Converted and compiled ./build/employees/models.py to ./build/employees/models.pyx
+2024-07-18 21:46:44,258 - INFO - Fixed Cython issues in ./build/employees/serializers.pyx
+2024-07-18 21:46:44,273 - INFO - Converted and compiled ./build/employees/serializers.py to ./build/employees/serializers.pyx
+2024-07-18 21:46:44,273 - INFO - Fixed Cython issues in ./build/employees/apps.pyx
+2024-07-18 21:46:44,279 - INFO - Converted and compiled ./build/employees/apps.py to ./build/employees/apps.pyx
+2024-07-18 21:46:44,279 - INFO - Fixed Cython issues in ./build/employees/admin.pyx
+2024-07-18 21:46:44,284 - INFO - Converted and compiled ./build/employees/admin.py to ./build/employees/admin.pyx
+2024-07-18 21:46:44,284 - INFO - Fixed Cython issues in ./build/employees/tests.pyx
+2024-07-18 21:46:44,288 - INFO - Converted and compiled ./build/employees/tests.py to ./build/employees/tests.pyx
+2024-07-18 21:46:44,288 - INFO - Fixed Cython issues in ./build/employees/views.pyx
+2024-07-18 21:46:44,314 - INFO - Converted and compiled ./build/employees/views.py to ./build/employees/views.pyx
+2024-07-18 21:46:44,314 - INFO - Total files converted and compiled: 48
+2024-07-18 21:46:44,314 - INFO - Total unconvertible files: 1
+2024-07-18 21:46:44,314 - INFO - Creating temporary distribution for building extensions
+2024-07-18 21:46:44,316 - INFO - Building extensions
+2024-07-18 21:46:44,317 - INFO - Running build_ext command
+2024-07-18 21:47:29,858 - INFO - Deleting original Python files
+2024-07-18 21:47:29,858 - INFO - Deleted ./build/cythonizer/old/check.py
+2024-07-18 21:47:29,858 - INFO - Deleted ./build/cythonizer/old/rename.py
+2024-07-18 21:47:29,858 - INFO - Deleted ./build/cythonizer/old/checking.py
+2024-07-18 21:47:29,858 - INFO - Deleted ./build/cythonizer/old/generate_realistic_mockup_data.py
+2024-07-18 21:47:29,858 - INFO - Deleted ./build/cythonizer/old/checking_v2.py
+2024-07-18 21:47:29,859 - INFO - Deleted ./build/cythonizer/build_tools/cython_compiler.py
+2024-07-18 21:47:29,859 - INFO - Deleted ./build/cythonizer/build_tools/config.py
+2024-07-18 21:47:29,859 - INFO - Deleted ./build/cythonizer/build_tools/build_command.py
+2024-07-18 21:47:29,859 - INFO - Deleted ./build/cythonizer/build_tools/spinner.py
+2024-07-18 21:47:29,859 - INFO - Deleted ./build/cythonizer/build_tools/logging_setup.py
+2024-07-18 21:47:29,860 - INFO - Deleted ./build/reporting/models.py
+2024-07-18 21:47:29,860 - INFO - Deleted ./build/reporting/serializers.py
+2024-07-18 21:47:29,860 - INFO - Deleted ./build/reporting/apps.py
+2024-07-18 21:47:29,860 - INFO - Deleted ./build/reporting/admin.py
+2024-07-18 21:47:29,860 - INFO - Deleted ./build/reporting/tests.py
+2024-07-18 21:47:29,860 - INFO - Deleted ./build/reporting/views.py
+2024-07-18 21:47:29,860 - INFO - Deleted ./build/time_tracking/models.py
+2024-07-18 21:47:29,860 - INFO - Deleted ./build/time_tracking/serializers.py
+2024-07-18 21:47:29,860 - INFO - Deleted ./build/time_tracking/apps.py
+2024-07-18 21:47:29,860 - INFO - Deleted ./build/time_tracking/admin.py
+2024-07-18 21:47:29,860 - INFO - Deleted ./build/time_tracking/tests.py
+2024-07-18 21:47:29,860 - INFO - Deleted ./build/time_tracking/views.py
+2024-07-18 21:47:29,860 - INFO - Deleted ./build/projects/models.py
+2024-07-18 21:47:29,861 - INFO - Deleted ./build/projects/serializers.py
+2024-07-18 21:47:29,861 - INFO - Deleted ./build/projects/apps.py
+2024-07-18 21:47:29,861 - INFO - Deleted ./build/projects/admin.py
+2024-07-18 21:47:29,861 - INFO - Deleted ./build/projects/tests.py
+2024-07-18 21:47:29,861 - INFO - Deleted ./build/projects/views.py
+2024-07-18 21:47:29,861 - INFO - Deleted ./build/Root/asgi.py
+2024-07-18 21:47:29,861 - INFO - Deleted ./build/Root/settings.py
+2024-07-18 21:47:29,861 - INFO - Deleted ./build/Root/wsgi.py
+2024-07-18 21:47:29,861 - INFO - Deleted ./build/finance/models.py
+2024-07-18 21:47:29,861 - INFO - Deleted ./build/finance/serializers.py
+2024-07-18 21:47:29,861 - INFO - Deleted ./build/finance/apps.py
+2024-07-18 21:47:29,862 - INFO - Deleted ./build/finance/admin.py
+2024-07-18 21:47:29,862 - INFO - Deleted ./build/finance/tests.py
+2024-07-18 21:47:29,862 - INFO - Deleted ./build/finance/views.py
+2024-07-18 21:47:29,869 - INFO - Deleted ./build/notifications/models.py
+2024-07-18 21:47:29,869 - INFO - Deleted ./build/notifications/apps.py
+2024-07-18 21:47:29,869 - INFO - Deleted ./build/notifications/admin.py
+2024-07-18 21:47:29,869 - INFO - Deleted ./build/notifications/tests.py
+2024-07-18 21:47:29,869 - INFO - Deleted ./build/notifications/views.py
+2024-07-18 21:47:29,869 - INFO - Deleted ./build/employees/models.py
+2024-07-18 21:47:29,869 - INFO - Deleted ./build/employees/serializers.py
+2024-07-18 21:47:29,869 - INFO - Deleted ./build/employees/apps.py
+2024-07-18 21:47:29,870 - INFO - Deleted ./build/employees/admin.py
+2024-07-18 21:47:29,870 - INFO - Deleted ./build/employees/tests.py
+2024-07-18 21:47:29,870 - INFO - Deleted ./build/employees/views.py
+2024-07-18 21:47:29,870 - INFO - Total Python files deleted: 48
+2024-07-18 21:47:29,870 - INFO - Copy and build process completed successfully
+2024-07-18 21:47:30,815 - INFO - Unconvertible files:
+2024-07-18 21:47:30,816 - INFO - ./build/cythonizer/build_tools/file_operations.py

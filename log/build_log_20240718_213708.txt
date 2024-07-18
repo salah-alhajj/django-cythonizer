@@ -1,0 +1,2 @@
+2024-07-18 21:37:08,690 - INFO - Starting copy and build process for the entire project
+2024-07-18 21:37:09,690 - INFO - Removing existing build directory: ./build
