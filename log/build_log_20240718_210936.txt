@@ -1,4 +1,0 @@
-2024-07-18 21:09:36,015 - INFO - Starting Django Cython project setup
-2024-07-18 21:09:36,021 - INFO - Starting copy and build process for the entire project
-2024-07-18 21:09:37,026 - INFO - Removing existing build directory: build
-2024-07-18 21:09:38,219 - INFO - Copying project to build

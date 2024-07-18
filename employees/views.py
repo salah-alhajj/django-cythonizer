@@ -1,9 +1,13 @@
-from rest_framework import viewsets, filters
+from rest_framework import viewsets
+from rest_framework import  filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from django.db.models import Avg, Count
-from .models import Employee, Department, Skill, EmployeeSkill, PerformanceReview
-from .serializers import EmployeeSerializer, DepartmentSerializer, SkillSerializer, EmployeeSkillSerializer, PerformanceReviewSerializer
+from django.db.models import Avg
+from django.db.models import  Count
+from .models import Employee, Department, Skill, EmployeeSkill
+from .models import  PerformanceReview
+from .serializers import EmployeeSerializer, DepartmentSerializer, SkillSerializer, EmployeeSkillSerializer
+from .serializers import  PerformanceReviewSerializer
 
 class EmployeeViewSet(viewsets.ModelViewSet):
     queryset = Employee.objects.all()

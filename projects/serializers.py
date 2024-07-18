@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Project, Task
+from .models import Project
+from .models import  Task
 
 class TaskSerializer(serializers.ModelSerializer):
     assigned_to_name = serializers.CharField(source='assigned_to.user.get_full_name', read_only=True)

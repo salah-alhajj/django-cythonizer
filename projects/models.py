@@ -1,8 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MinValueValidator
+from django.core.validators import  MaxValueValidator
 from django.utils import timezone
-from employees.models import Employee,Department
+from employees.models import Employee
+from employees.models import Department
 class Project(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()

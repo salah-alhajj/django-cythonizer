@@ -4,7 +4,8 @@ import shutil
 import re
 import time
 import threading
-from setuptools import setup, find_packages, Command
+from setuptools import setup, find_packages
+from setuptools import  Command
 from setuptools.extension import Extension
 from Cython.Build import cythonize
 from Cython.Distutils import build_ext

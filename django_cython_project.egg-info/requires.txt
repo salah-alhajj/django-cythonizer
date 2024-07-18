@@ -1,2 +1,0 @@
-Django>=3.2
-Cython>=0.29

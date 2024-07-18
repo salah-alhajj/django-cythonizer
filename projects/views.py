@@ -1,9 +1,13 @@
-from rest_framework import viewsets, filters
+from rest_framework import viewsets
+from rest_framework import  filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from django.db.models import Count, Avg, Sum
-from .models import Project, Task
-from .serializers import ProjectSerializer, TaskSerializer
+from django.db.models import Count, Avg
+from django.db.models import  Sum
+from .models import Project
+from .models import  Task
+from .serializers import ProjectSerializer
+from .serializers import  TaskSerializer
 from django.utils import timezone
 class ProjectViewSet(viewsets.ModelViewSet):
     queryset = Project.objects.all()

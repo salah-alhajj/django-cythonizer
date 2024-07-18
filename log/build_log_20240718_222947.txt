@@ -1,2 +1,0 @@
-2024-07-18 22:29:47,877 - INFO - Starting copy and build process for the entire project
-2024-07-18 22:29:49,888 - INFO - Copying project to ./build

@@ -1,6 +1,7 @@
 from django.db import models
 
-from projects.models import Project,Task
+from projects.models import Project
+from projects.models import Task
 from employees.models import Employee
 
 class Notification(models.Model):

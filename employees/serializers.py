@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Employee, Department, Skill, EmployeeSkill, PerformanceReview
+from .models import Employee, Department, Skill, EmployeeSkill
+from .models import  PerformanceReview
 
 class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:

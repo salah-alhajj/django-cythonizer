@@ -1,0 +1,4 @@
+PyYaml
+Cython
+djangorestframework
+django==4.2.13

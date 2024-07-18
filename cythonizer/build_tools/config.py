@@ -19,6 +19,9 @@ settings = load_settings()
 
 BUILD_FOLDER_NAME = settings['build']['folder_name']
 BUILD_PATH = settings['build']['path']
+if not os.path.isabs(BUILD_PATH):
+    BUILD_PATH = os.path.abspath(os.path.join(os.getcwd(), BUILD_PATH))
+
 EXCLUDE_FILES = settings['exclude']['files']
 EXCLUDE_DIRS = settings['exclude']['dirs']
 EXCLUDE_COPYING_FILES = settings['exclude']['copying_files']

@@ -1,6 +1,7 @@
 import os
 import shutil
-from typing import List, Tuple
+from typing import List
+from typing import  Tuple
 
 def rename_pyx_to_py(project_path: str) -> Tuple[List[str], List[str]]:
     """

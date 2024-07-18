@@ -1,7 +1,8 @@
 import os
 import logging
 from datetime import datetime
-from .config import LOG_DIR, LOG_FILENAME
+from .config import LOG_DIR
+from .config import  LOG_FILENAME
 
 def setup_logging():
     if not os.path.exists(LOG_DIR):

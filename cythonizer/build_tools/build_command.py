@@ -14,7 +14,6 @@ from .file_operations import custom_copy, fix_cython_issues, delete_python_files
 from .cython_compiler import capture_cython_errors, create_extension
 from .spinner import Spinner
 
-
 class CopyAndBuildCommand(Command):
     description = 'Copy project to build folder and convert to Cython'
     user_options = []
@@ -42,6 +41,7 @@ class CopyAndBuildCommand(Command):
         spinner.update_message("Copying project files")
         time.sleep(1)
         logger.info(f"Copying project to {BUILD_PATH}")
+        os.makedirs(BUILD_PATH, exist_ok=True)
         custom_copy('.', BUILD_PATH)
         
         spinner.update_message("Converting and compiling files")
@@ -121,5 +121,3 @@ class CopyAndBuildCommand(Command):
             logger.info("Unconvertible files:")
             for file in unconvertible_files:
                 logger.info(file)
-
-
