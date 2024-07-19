@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='your_package_name',
+    name='django-cythonizer',
     version='0.0.7',
     author='Salah Aldain Alhajj',
     author_email='contact@salahaldain.com',
