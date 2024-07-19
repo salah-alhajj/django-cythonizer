@@ -36,6 +36,6 @@ class Command(BaseCommand):
             # Run the command
             build_command.run()
             
-            self.stdout.write(self.style.SUCCESS("Setup and build process completed"))
+            self.stdout.write(self.style.SUCCESS(f"Setup and build process completed to {settings['build']['path']}"))
         except Exception as e:
             self.stderr.write(self.style.ERROR(f"Setup and build process failed: {str(e)}"))

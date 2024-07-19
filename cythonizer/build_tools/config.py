@@ -17,10 +17,12 @@ def load_settings():
 
 settings = load_settings()
 
-BUILD_FOLDER_NAME = settings['build']['folder_name']
 BUILD_PATH = settings['build']['path']
 if not os.path.isabs(BUILD_PATH):
     BUILD_PATH = os.path.abspath(os.path.join(os.getcwd(), BUILD_PATH))
+# else:
+#     # project dir and build
+#     BUILD_PATH =  os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), BUILD_PATH))
 
 EXCLUDE_FILES = settings['exclude']['files']
 EXCLUDE_DIRS = settings['exclude']['dirs']

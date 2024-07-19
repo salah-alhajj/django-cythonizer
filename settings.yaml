@@ -1,7 +1,6 @@
 # Build settings
 build:
-  folder_name: 'build'
-  path: '/Users/slahaldynalhaj/Projects/django/build2/build0'
+  path: '/Users/slahaldynalhaj/Projects/django/build0'
 
 # Exclusion settings
 exclude:
@@ -28,10 +27,11 @@ exclude:
     - 'static'
     - '.venv'
     - 'build'
+    - 'build0'
 
 # Logging settings
 logging:
-  dir: 'logs'
+  dir: '/Users/slahaldynalhaj/Projects/django/logs'
   filename: 'build_log_{timestamp}.txt'
 
 # Cython settings

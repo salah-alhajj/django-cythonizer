@@ -112,6 +112,11 @@ class CopyAndBuildCommand(Command):
         time.sleep(1)
         logger.info("Deleting original Python files")
         delete_python_files(BUILD_PATH, unconvertible_files)
+        if BUILD_PATH != './build':
+            build_path = os.path.abspath('build')
+            print(build_path)
+            os.system('rm -rf build')
+        
         
         logger.info("Copy and build process completed successfully")
         spinner.stop()
