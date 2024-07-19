@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='django-cythonizer',
-    version='0.0.9',  # Updated to match the version in settings.yaml
+    version='0.0.10',  # Updated to match the version in settings.yaml
     author='Salah Aldain Alhajj',
     author_email='contact@salahaldain.com',
     packages=find_packages(where='src'),
