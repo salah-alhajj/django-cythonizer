@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from cythonizer.build_tools import load_settings
-from cythonizer.build_tools import  CopyAndBuildCommand
+from cythonizer.build_tools import  BuildCommand
 from setuptools import setup
 from setuptools import  find_packages
 from setuptools.dist import Distribution
@@ -18,7 +18,7 @@ class Command(BaseCommand):
             'python_requires': settings['project']['python_requires'],
             'include_package_data': True,
             'cmdclass': {
-                'cbuild': CopyAndBuildCommand,
+                'cbuild': BuildCommand,
             },
         }
         self.stdout.write("Setting up Django Cython project")
@@ -26,10 +26,10 @@ class Command(BaseCommand):
             # Create a Distribution object
             dist = Distribution(setup_kwargs)
             
-            # Initialize CopyAndBuildCommand with the Distribution object
-            build_command = CopyAndBuildCommand(dist)
+            # Initialize BuildCommand with the Distribution object
+            build_command = BuildCommand(dist)
             
-            # Set stdout and stderr if your CopyAndBuildCommand uses them
+            # Set stdout and stderr if your BuildCommand uses them
             build_command.stdout = self.stdout
             build_command.stderr = self.stderr
             

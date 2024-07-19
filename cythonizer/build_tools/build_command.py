@@ -14,7 +14,7 @@ from .file_operations import custom_copy, fix_cython_issues, delete_python_files
 from .cython_compiler import capture_cython_errors, create_extension
 from .spinner import Spinner
 
-class CopyAndBuildCommand(Command):
+class BuildCommand(Command):
     description = 'Copy project to build folder and convert to Cython'
     user_options = []
 
@@ -114,6 +114,7 @@ class CopyAndBuildCommand(Command):
         delete_python_files(BUILD_PATH, unconvertible_files)
         print(BUILD_PATH)
         if BUILD_PATH != os.path.abspath('build'):
+            print(build_path)
             os.system('rm -rf build')
         
         
