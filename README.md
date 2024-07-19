@@ -1,6 +1,6 @@
 # Django-Cythonizer 🚀
 
-![Django-Cythonizer Logo](Cython_logo.svg)
+![Django-Cythonizer Logo](https://en.wikipedia.org/wiki/File:Cython_logo.svg)
 
 <p align="center">
   <a href="https://badge.fury.io/py/django-cythonizer">
