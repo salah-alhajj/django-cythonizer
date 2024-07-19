@@ -1,6 +1,6 @@
 # Build settings
 build:
-  path: '/Users/slahaldynalhaj/Projects/django/build0'
+  path: 'build'
 
 # Exclusion settings
 exclude:
@@ -31,7 +31,7 @@ exclude:
 
 # Logging settings
 logging:
-  dir: '/Users/slahaldynalhaj/Projects/django/logs'
+  dir: 'logs'
   filename: 'build_log_{timestamp}.txt'
 
 # Cython settings

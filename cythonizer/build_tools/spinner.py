@@ -1,16 +1,7 @@
-import os
 import sys
-import shutil
-import re
 import time
 import threading
-from setuptools import setup, find_packages
-from setuptools import  Command
-from setuptools.extension import Extension
-from Cython.Build import cythonize
-from Cython.Distutils import build_ext
-from datetime import datetime
-import logging
+
 
 class Spinner:
     def __init__(self, message="Loading"):
