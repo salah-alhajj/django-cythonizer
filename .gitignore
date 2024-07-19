@@ -83,3 +83,4 @@ poetry.toml
 pyrightconfig.json
 .vscode
 .idea/
+.DS_Store
