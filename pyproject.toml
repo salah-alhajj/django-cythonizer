@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=45", "wheel", "Cython==3.0.10"]
+requires = ["setuptools>=45", "wheel", "Cython==3.0.10","PyYAML>=6.0.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -28,7 +28,7 @@ dependencies = [
     "Django>=4.2,<5.0",
     "djangorestframework",
     "Cython==3.0.10",
-    "PyYAML",
+    "pyyaml",
 ]
 requires-python = ">=3.8"
 
