@@ -9,10 +9,14 @@ exclude:
     - '__init__.py'
     - 'manage.py'
     - 'urls.py'
+    - '.gitigonre'
+    - '.git'
+
+
   dirs:
     - 'migrations'
     - '.venv'
-    - 'cythonizer'
+    - 'mnmm'
   copying_files:
     - '.env'
     - '.gitignore'
@@ -23,10 +27,11 @@ exclude:
     - 'static'
     - '.venv'
     - 'build'
+    - 'build0'
 
 # Logging settings
 logging:
-  dir: 'log'
+  dir: 'logs'
   filename: 'build_log_{timestamp}.txt'
 
 # Cython settings
@@ -40,4 +45,6 @@ project:
   python_requires: '>=3.6'
   install_requires:
     - 'Django>=3.2'
-    - 'Cython>=0.29'
+    - 'djangorestframework>=3.15.2'
+    - 'Cython>=3.0.10'
+    - 'PyYAML>=0.5.1'
