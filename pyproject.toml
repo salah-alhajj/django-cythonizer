@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools>=45", "wheel", "Cython==3.0.10","PyYAML>=6.0.1"]
+requires = ["setuptools>=45", "wheel", "Cython==3.0.10", "PyYAML>=6.0.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-cythonizer"
-version = "0.0.8"
+version = "0.0.9"
 description = "A Django package for Cythonizing Django projects"
 readme = "README.md"
 authors = [
@@ -22,13 +22,14 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Framework :: Django",
     "Framework :: Django :: 4.2",
+    "Framework :: Django :: 3.2",
 ]
 keywords = ["django", "cython", "optimization", "performance", "compilation"]
 dependencies = [
     "Django>=4.2,<5.0",
     "djangorestframework",
     "Cython==3.0.10",
-    "pyyaml",
+    "PyYAML>=6.0.1",
 ]
 requires-python = ">=3.8"
 
@@ -52,11 +53,11 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["django_cythonizer*"]
+include = ["cythonizer*"]
 exclude = ["tests*"]
 
 [tool.setuptools.package-data]
-"django_cythonizer" = ["build_tools/settings.yaml"]
+"cythonizer" = ["build_tools/settings.yaml"]
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "tests.settings"
@@ -99,4 +100,4 @@ disallow_untyped_defs = true
 ignore_missing_imports = true
 
 [project.scripts]
-django-cythonize = "django_cythonizer.management.commands.cythonize:Command.handle"
+django-cythonize = "cythonizer.management.commands.cythoniz:Command.handle"
