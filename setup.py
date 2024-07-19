@@ -1,24 +1,20 @@
 from setuptools import setup, find_packages
-import os
-import sys
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'src')))
-from cythonizer.build_tools  import load_settings
-
-settings = load_settings()
 
 setup(
-    name=settings['project']['name'],
-    version=settings['project']['version'],
-    author="Salah Aldain Alhajj",
-    author_email="contact@salahaldain.com",
-    packages=find_packages(where=settings['build']['path']),
-    package_dir={'': settings['build']['path']},
-    install_requires=settings['project']['install_requires'],
-    python_requires=settings['project']['python_requires'],
-    description=settings['project'].get('description', ''),
+    name='your_package_name',
+    version='0.1.0',
+    author='Salah Aldain Alhajj',
+    author_email='contact@salahaldain.com',
+    packages=find_packages(where='src'),
+    package_dir={'': 'src'},
+    install_requires=[
+        'pyyaml',  # Include your dependencies here
+    ],
+    python_requires='>=3.6',  # Adjust according to your needs
+    description='A brief description of your package',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url=settings['project'].get('url', ''),
+    url='https://your-package-url.com',  # Your package URL
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',

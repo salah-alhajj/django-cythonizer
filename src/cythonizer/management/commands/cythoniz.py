@@ -29,7 +29,6 @@ class Command(BaseCommand):
             # Initialize BuildCommand with the Distribution object
             build_command = BuildCommand(dist)
             
-            # Set stdout and stderr if your BuildCommand uses them
             build_command.stdout = self.stdout
             build_command.stderr = self.stderr
             
