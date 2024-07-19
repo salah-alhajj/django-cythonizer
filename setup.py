@@ -1,5 +1,8 @@
 from setuptools import setup, find_packages
-from src.cythonizer.build_tools  import load_settings
+import os
+import sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'src')))
+from cythonizer.build_tools  import load_settings
 
 settings = load_settings()
 
