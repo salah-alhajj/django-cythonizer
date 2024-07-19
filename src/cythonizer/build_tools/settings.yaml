@@ -41,8 +41,8 @@ cython:
 
 # Project settings
 project:
-  name: 'django_cython_project'
-  version: '0.1'
+  name: 'django_cython'
+  version: '0.0.7'
   python_requires: '>=3.6'
   install_requires:
     - 'Django>=3.2'
