@@ -108,6 +108,7 @@ class BuildCommand(Command):
             sys.stdout = original_stdout
             sys.stderr = original_stderr
         
+        
         spinner.update_message("Cleaning up")
         time.sleep(1)
         logger.info("Deleting original Python files")
