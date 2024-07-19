@@ -16,7 +16,7 @@ exclude:
   dirs:
     - 'migrations'
     - '.venv'
-    - 'mnmm'
+    - 'build'
   copying_files:
     - '.env'
     - '.gitignore'
@@ -27,7 +27,8 @@ exclude:
     - 'static'
     - '.venv'
     - 'build'
-    - 'build0'
+    - 'logs'
+
 
 # Logging settings
 logging:

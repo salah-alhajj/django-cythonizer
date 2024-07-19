@@ -60,8 +60,10 @@ INSTALLED_APPS = [
 python manage.py cythonize
 ```
 
-3. Enjoy the speed boost! 🎉
-
+3. Open build FLoder and run it as normal django project 
+<br>
+4. Enjoy the speed boost! 🎉🎉🎉🎉
+<br/>
 ## ⚠️ Important Considerations
 
 ### Handling Excluded Paths
@@ -94,7 +96,7 @@ exclude:
   dirs:
     - 'migrations'
     - '.venv'
-    - 'mnmm'
+    - 'build'
 
 # ... (other settings)
 ```
@@ -107,6 +109,8 @@ Here's a quick benchmark comparing a standard Django view vs a Cythonized view:
 |------------|--------------|--------------|
 | Standard   | 1000         | 50           |
 | Cythonized | 1300         | 38           |
+
+As the load increases on the system, the performance and reliability gap between the standard Django project and the Cythonized Django project widens, with the Cythonized version consistently outperforming, despite both projects being identical in terms of code and environment.
 
 ## 🛠 How It Works
 
